@@ -496,6 +496,19 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
     // IAP
     purchased_gems_success: "Successfully purchased {gems} Gems ({name})!",
     free_gems_added: "+5 Free Gems added to your balance!",
+    
+    // Minigames
+    minigame_calibration_title: "Calibration",
+    minigame_calibration_inst: "Tap FIRE when the needle reaches the Target Zone.",
+    minigame_cannon_aim_title: "Cannon Aim",
+    minigame_cannon_aim_inst: "Adjust your angle, then hold and release to match the enemy's distance.",
+    minigame_catch_title: "Cannonball Catch",
+    minigame_catch_inst: "Move left and right to catch cannonballs. Avoid the sea obstacles.",
+    minigame_time: "Time",
+    minigame_times_up: "TIME'S UP",
+    minigame_hold: "HOLD",
+    minigame_glance_hit: "GLANCE HIT",
+    minigame_perfect_hit: "PERFECT HIT!",
   },
   vi: {
     // General
@@ -1038,5 +1051,18 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
     // IAP
     purchased_gems_success: "Đã mua thành công {gems} Kim Cương ({name})!",
     free_gems_added: "+5 Kim Cương miễn phí đã được thêm vào!",
+    
+    // Minigames
+    minigame_calibration_title: "Hiệu Chuẩn",
+    minigame_calibration_inst: "Chạm vào FIRE khi kim chỉ tới Vùng Mục Tiêu.",
+    minigame_cannon_aim_title: "Ngắm Pháo",
+    minigame_cannon_aim_inst: "Chỉnh góc, sau đó giữ và thả để khớp với khoảng cách của địch.",
+    minigame_catch_title: "Đỡ Đạn Pháo",
+    minigame_catch_inst: "Di chuyển trái phải để đỡ đạn pháo. Tránh chướng ngại vật trên biển.",
+    minigame_time: "Thời Gian",
+    minigame_times_up: "HẾT GIỜ",
+    minigame_hold: "GIỮ",
+    minigame_glance_hit: "ĐÒN SƯỢT",
+    minigame_perfect_hit: "ĐÒN HOÀN HẢO!",
   },
 };
