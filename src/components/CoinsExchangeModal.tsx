@@ -88,9 +88,7 @@ export const CoinsExchangeModal: React.FC<CoinsExchangeModalProps> = ({
 
   const handleExchangeCoins = (pkg: CoinPackage) => {
     if (gems < pkg.gemsCost) {
-      setInsufficientGemsAlert(
-        `Need ${pkg.gemsCost} 💎 gems (you have ${gems} 💎). Top up gems first!`,
-      );
+      setInsufficientGemsAlert(t("need_more_gems"));
       if (alertTimeoutRef.current) clearTimeout(alertTimeoutRef.current);
       alertTimeoutRef.current = setTimeout(() => setInsufficientGemsAlert(null), 4000);
       return;
@@ -99,9 +97,7 @@ export const CoinsExchangeModal: React.FC<CoinsExchangeModalProps> = ({
     const success = exchangeGemsForCoins(pkg);
     if (success) {
       setInsufficientGemsAlert(null);
-      setPurchaseSuccessMessage(
-        `Exchanged ${pkg.gemsCost} Gems for +${pkg.coinsReward.toLocaleString()} Coins!`,
-      );
+      setPurchaseSuccessMessage(t("exchanged_success"));
       if (successTimeoutRef.current) clearTimeout(successTimeoutRef.current);
       successTimeoutRef.current = setTimeout(() => setPurchaseSuccessMessage(null), 3500);
     }

@@ -88,7 +88,7 @@ export const GemsPurchaseModal: React.FC<GemsPurchaseModalProps> = ({
       setIsWatchingAd(false);
       const ok = watchAdForGems();
       if (ok) {
-        setPurchaseSuccessMessage("+5 Free Gems added to your balance!");
+        setPurchaseSuccessMessage(t("free_gems_added", "+5 Free Gems added to your balance!"));
         if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
         toastTimeoutRef.current = setTimeout(() => setPurchaseSuccessMessage(null), 3500);
       }
@@ -125,7 +125,7 @@ export const GemsPurchaseModal: React.FC<GemsPurchaseModalProps> = ({
     setTimeout(() => {
       buyGemsIAP(pkg);
       setPurchasingGemTier(null);
-      setPurchaseSuccessMessage(`Successfully purchased ${pkg.gems} Gems (${pkg.name})!`);
+      setPurchaseSuccessMessage(t("purchased_gems_success", `Successfully purchased ${pkg.gems} Gems (${pkg.name})!`).replace("{gems}", pkg.gems.toString()).replace("{name}", t(pkg.name, pkg.name)));
       if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
       toastTimeoutRef.current = setTimeout(() => setPurchaseSuccessMessage(null), 3500);
     }, 600);

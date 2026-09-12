@@ -644,7 +644,7 @@ export const TreasureHuntScreen: React.FC = () => {
               <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-mono border border-emerald-500/30">{t("2_km_radar")}</span>
             </div>
             <div className="text-[10px] text-amber-200/60 font-mono">
-              {t("server")}: <span className="text-white font-bold">{currentServer.name}</span> | {t("active")}: <span className="text-emerald-300 font-bold">{detectedTreasures.length} Chests</span>
+              {t("server")}: <span className="text-white font-bold">{currentServer.name}</span> | {t("chests_active_label", "Active")}: <span className="text-emerald-300 font-bold">{t("chests_active", "{count} Chests").replace("{count}", detectedTreasures.length.toString())}</span>
             </div>
           </div>
         </div>
@@ -783,7 +783,7 @@ export const TreasureHuntScreen: React.FC = () => {
                     </span>
                   </div>
                   <div className="text-[11px] text-emerald-400 font-mono font-bold flex items-center gap-2 mt-0.5">
-                    <span>📍 {selectedTreasure.distanceMeters}m away</span>
+                    <span>📍 {selectedTreasure.distanceMeters}{t("distance_meters")}</span>
                     <span>🧭 {selectedTreasure.bearing}° {getCardinalDirection(selectedTreasure.bearing || 0)}</span>
                   </div>
                 </div>
@@ -830,7 +830,7 @@ export const TreasureHuntScreen: React.FC = () => {
                 getRarityMetadata(nearestTreasure.rarity).borderStyle
               }`}
             >
-              {nearestTreasure.rarity}
+              {t(nearestTreasure.rarity, nearestTreasure.rarity)}
             </span>
           </div>
 
@@ -848,12 +848,12 @@ export const TreasureHuntScreen: React.FC = () => {
               </div>
               <div>
                 <div className="text-sm font-serif font-black text-white">
-                  {nearestTreasure.title}
+                  {t(nearestTreasure.title.replace(/ #\d+$/, ""), nearestTreasure.title.replace(/ #\d+$/, ""))} {nearestTreasure.title.match(/ #\d+$/)?.[0] || ""}
                 </div>
                 <div className="text-[11px] font-mono text-emerald-400 font-bold flex items-center gap-2 mt-0.5">
                   <span className="flex items-center gap-0.5">
                     <MapPin className="w-3 h-3 text-emerald-400" />
-                    {nearestTreasure.distanceMeters}m away
+                    {nearestTreasure.distanceMeters}{t("distance_meters")}
                   </span>
                   <span className="flex items-center gap-0.5 text-amber-300">
                     <Navigation
@@ -968,7 +968,7 @@ export const TreasureHuntScreen: React.FC = () => {
             <div className="text-xl mb-0.5">👑</div>
             <span className="text-[10px] uppercase font-bold text-amber-200/60">{t("secret_relics_looted")}</span>
             <span className="text-sm font-black font-serif text-amber-400">
-              {todayLoot.secretRelics.length} Found
+              {todayLoot.secretRelics.length} {t("found")}
             </span>
           </div>
         </div>
@@ -1020,7 +1020,7 @@ export const TreasureHuntScreen: React.FC = () => {
                     <span className="font-bold text-white truncate">{item.title}</span>
                   </div>
                   <span className="font-mono font-bold text-amber-300 flex-shrink-0">
-                    +{item.reward.label}
+                    +{item.reward.label.replace("Gold Coins", t("gold_coins", "Gold Coins")).replace("Precious Gem", t("precious_gem", "Precious Gem")).replace("Shiny Gems", t("shiny_gems", "Shiny Gems")).replace("Stashed Coins", t("stashed_coins", "Stashed Coins")).replace("Flawless Gems", t("flawless_gems", "Flawless Gems"))}
                   </span>
                 </div>
               ))}
@@ -1075,7 +1075,7 @@ export const TreasureHuntScreen: React.FC = () => {
                       )}
                     </span>
                     <span className="text-amber-100/90">
-                      {t("claimed")} <strong className="text-amber-300 font-bold">{log.rewardLabel}</strong>
+                      {t("claimed")} <strong className="text-amber-300 font-bold">{log.rewardLabel.replace("Gold Coins", t("gold_coins", "Gold Coins")).replace("Precious Gem", t("precious_gem", "Precious Gem")).replace("Shiny Gems", t("shiny_gems", "Shiny Gems")).replace("Stashed Coins", t("stashed_coins", "Stashed Coins")).replace("Flawless Gems", t("flawless_gems", "Flawless Gems"))}</strong>
                     </span>
                     {log.locationName && (
                       <span className="text-[10px] text-amber-200/50 block sm:inline sm:ml-1.5">
