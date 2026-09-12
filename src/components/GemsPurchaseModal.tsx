@@ -145,7 +145,6 @@ export const GemsPurchaseModal: React.FC<GemsPurchaseModalProps> = ({
               <h2 className="text-sm sm:text-base font-serif font-black uppercase text-[#e0f2fe] tracking-wider">
                 {t("gems_vault", "GEMS VAULT")}
               </h2>
-              <p className="text-[10px] text-sky-300/80 font-bold uppercase">{t("iap_rewards")}</p>
             </div>
           </div>
 

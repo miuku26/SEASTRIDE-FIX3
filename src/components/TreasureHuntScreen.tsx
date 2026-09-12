@@ -934,13 +934,8 @@ export const TreasureHuntScreen: React.FC = () => {
               <h3 className="text-xs font-serif font-black uppercase text-amber-300 tracking-wide">
                 {t("todays_plundered_loot")}
               </h3>
-              <p className="text-[10px] text-amber-200/60 font-mono">
-                {t("chests_collected_today", "{count} Chest(s) Collected Today").replace("{count}", todayLoot.totalChestsOpened.toString())}
-              </p>
             </div>
           </div>
-
-          <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">{t("daily_stash")}</span>
         </div>
 
         {/* 3-Pillar Loot Summary Counters */}
@@ -1043,7 +1038,6 @@ export const TreasureHuntScreen: React.FC = () => {
               {currentServer.name}
             </span>
           </div>
-          <span className="text-[10px] text-amber-200/60 font-mono">{t("server_wide_live_feed")}</span>
         </div>
 
         <div className="space-y-2 max-h-60 overflow-y-auto pr-1">

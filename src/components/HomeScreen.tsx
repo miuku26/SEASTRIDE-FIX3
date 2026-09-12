@@ -292,8 +292,7 @@ export const HomeScreen: React.FC = () => {
             onClick={() =>
               setInfoState({
                 title: t("gold"),
-                message:
-                  "100 steps = 10 coins. Walk to charge your energy and earn gold for your voyage! (100 bước = 10 vàng)",
+                message: t("energy_charged_info"),
               })
             }
             className="p-1 rounded-full bg-[#2b1d19] border border-[#b45309] hover:bg-[#3d2417] text-sky-400 hover:text-sky-300 transition-colors shadow-sm active:scale-95"
